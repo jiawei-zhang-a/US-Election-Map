@@ -4,26 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>US Election Map</title>
-    <style>
-      /* Contents of app.css */
-      /* Replace this with actual CSS from app.css */
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
-      #app {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-    </style>
   </head>
   <body>
     <div id="app"></div>
 
     <script type="module">
-      import App from 'src/App.svelte';
+      import App from './src/App.svelte';  // Ensure path is correct relative to root
 
       const app = new App({
         target: document.getElementById('app'),
