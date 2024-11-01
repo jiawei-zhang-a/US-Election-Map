@@ -1,49 +1,78 @@
-The following is auto-generated using vite. https://vite.dev/guide/
+# US State Polling Map
 
-# Svelte + Vite
+This project visualizes the polling data for the 2024 US Presidential Election across all states, allowing users to interact with a dynamic map to view polling information, state leanings, and electoral college votes in real time. This project provides a data-driven, interactive map to help users understand the polling landscape and electoral college projections.
 
-This template should help get you started developing with Svelte in Vite.
+## Features
 
-## Recommended IDE Setup
+- **Interactive US Map**: Hover and click to view detailed polling data for each state.
+- **Adjustable Toss-Up Margin**: Users can adjust the toss-up margin to redefine what constitutes a toss-up state. The map and electoral vote calculations will update dynamically based on this setting.
+- **Pie Chart for State Polls**: Displays a pie chart for each state, showing the Democratic, Republican, and unknown vote distributions.
+- **Electoral College Vote Bar**: A bar that visually represents the current electoral college standings based on polling data and toss-up adjustments.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Data Sources and Calculation Method
 
-## Need an official Svelte framework?
+All polling data displayed in this project is derived from multiple sources and personal recalculations:
+  
+- **2020 AP Vote Election Data**: Used as a baseline for some state leanings and historical comparison.
+- **2020 Election Result Data**: Offers context and historical polling data trends.
+- **Polling Data from [270toWin](https://www.270towin.com/2024-presidential-election-polls/)**: This data was used to inform polling estimates and trends for each state.
+- **Self Prediction for Battleground States**: For key battleground states, projections were made based on a combination of recent polling data from various sources with shifts applied to account for anticipated changes in 2024.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+> **Note**: All data presented in the project is recalculated to reflect a consistent, predictive model. The calculations and adjustments were made by the project author and are not an official projection.
 
-## Technical considerations
+## How to Use the Project
 
-**Why use this over SvelteKit?**
+1. **Adjust the Toss-Up Margin**: Use the slider at the bottom to adjust the toss-up margin. This margin sets the polling percentage point difference threshold below which a state is considered a toss-up.
+2. **Explore Individual States**: Click on any state to see detailed polling information, including the current lean and a pie chart of the polling distribution.
+3. **View Electoral College Standing**: The electoral college bar updates based on polling data and user-selected toss-up margin, helping visualize the potential electoral landscape.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## Project Setup
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+To run the project locally, follow these steps:
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+### Prerequisites
+- **Node.js** and **npm** installed on your machine.
+- Familiarity with **Svelte** and **D3.js** libraries.
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+### Installation
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jiawei-zhang-a/US-Election-Map.git
+   cd US-Election-Map/src
+   ```
 
-**Why include `.vscode/extensions.json`?**
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+3. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-**Why enable `checkJs` in the JS template?**
+4. Open localhost in your browser to view the project.
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
 
-**Why is HMR not preserving my local component state?**
+## Code Overview
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+- **`src/App.svelte`**: Main component that renders the US map, electoral college bar, and toss-up margin slider.
+- **`drawPieChart()`**: Renders the pie chart showing the distribution of polling data for selected states.
+- **`getFillColor()`**: Determines the color of each state based on the polling margin and toss-up margin.
+- **`renderElectoralCollegeBar()`**: Renders a dynamic bar that visualizes the electoral college standings based on the adjusted toss-up margin.
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+## Technologies Used
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+- **Svelte**: A front-end framework for building interactive user interfaces.
+- **D3.js**: A JavaScript library for data-driven document manipulation, used for the map and pie chart visualizations.
+- **TopoJSON**: To fetch and handle geographic data for rendering the US map.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+By [Jiawei Zhang]
+
