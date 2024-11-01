@@ -2,6 +2,9 @@
 
 This project visualizes the polling data for the 2024 US Presidential Election across all states, allowing users to interact with a dynamic map to view polling information, state leanings, and electoral college votes in real time. This project provides a data-driven, interactive map to help users understand the polling landscape and electoral college projections.
 
+**Note**: The data for battleground states includes my own analysis. This analysis combines all recent polling data with additional shifts based on demographic factors such as race and other regional influences, creating a more nuanced projection for these critical states.
+
+
 **Demo:** [US Election Map](https://us-election-map.netlify.app)
 
 
