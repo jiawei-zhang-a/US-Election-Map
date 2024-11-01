@@ -2,6 +2,9 @@
 
 This project visualizes the polling data for the 2024 US Presidential Election across all states, allowing users to interact with a dynamic map to view polling information, state leanings, and electoral college votes in real time. This project provides a data-driven, interactive map to help users understand the polling landscape and electoral college projections.
 
+**Demo:** [US Election Map](https://us-election-map.netlify.app)
+
+
 ## Features
 
 - **Interactive US Map**: Hover and click to view detailed polling data for each state.
@@ -39,7 +42,7 @@ To run the project locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/jiawei-zhang-a/US-Election-Map.git
-   cd US-Election-Map/src
+   cd US-Election-Map
    ```
 
 2. Install dependencies:
